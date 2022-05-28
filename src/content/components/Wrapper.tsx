@@ -1,21 +1,11 @@
 import { UrlChangeDataType } from '../../background';
+import { ToolBar } from '.';
+// import styles from '../styles/Wrapper.module.css';
 
 export type WrapperProps = UrlChangeDataType & {
   activated?: boolean;
 };
 
 export default function Wrapper({ url, activated = false }: WrapperProps) {
-  return (
-    <div
-      style={{
-        position: 'fixed',
-        zIndex: 9999,
-        backgroundColor: 'black',
-        color: 'white',
-      }}
-    >
-      <div>Url: {url}</div>
-      <div>Activated: {activated ? 'yes' : 'no'}</div>
-    </div>
-  );
+  return <ToolBar url={url} activated={activated} />;
 }
