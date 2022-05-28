@@ -9,7 +9,7 @@ export default function Wrapper({ url, activated = false }: WrapperProps) {
     <div
       style={{
         position: 'fixed',
-        zIndex: 100,
+        zIndex: 9999,
         backgroundColor: 'black',
         color: 'white',
       }}
