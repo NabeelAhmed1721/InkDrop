@@ -9,7 +9,9 @@
     "128": "icon128.png"
   },
   "permissions": [
-    "contextMenus"
+    "tabs",
+    "contextMenus",
+    "storage"
   ],
   "action": {
     "default_icon": {
