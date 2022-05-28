@@ -1,6 +1,6 @@
 {
-  "name": "Auto-Citer",
-  "description": "Easily cite website, books, etc. with a click",
+  "name": "InkDrop",
+  "description": "Easily add notes and sketch on websites",
   "manifest_version": 3,
   "version": "1.0.0",
   "icons": {
@@ -9,7 +9,7 @@
     "128": "icon128.png"
   },
   "permissions": [
-    ""
+    "contextMenus"
   ],
   "action": {
     "default_icon": {

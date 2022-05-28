@@ -1,7 +1,7 @@
 {
-  "name": "pillar-extension",
+  "name": "inkdrop",
   "version": "1.0.0",
-  "description": "The Official Pillar Extension",
+  "description": "Easily add notes and sketch on websites",
   "private": true,
   "scripts": {
     "build": "webpack --mode=production --progress",
