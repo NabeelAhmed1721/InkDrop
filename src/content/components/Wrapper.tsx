@@ -6,7 +6,14 @@ export type WrapperProps = UrlChangeDataType & {
 
 export default function Wrapper({ url, activated = false }: WrapperProps) {
   return (
-    <div style={{ position: 'fixed', zIndex: 100, backgroundColor: 'black' }}>
+    <div
+      style={{
+        position: 'fixed',
+        zIndex: 100,
+        backgroundColor: 'black',
+        color: 'white',
+      }}
+    >
       <div>Url: {url}</div>
       <div>Activated: {activated ? 'yes' : 'no'}</div>
     </div>
