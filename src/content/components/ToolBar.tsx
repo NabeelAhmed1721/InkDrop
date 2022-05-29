@@ -1,17 +1,35 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Draggable from 'react-draggable';
 import styles from '../styles/ToolBar.module.css';
 import { Menu, X, Edit2, Plus } from 'react-feather';
+import { v4 as uuidv4 } from 'uuid';
+import { InkDropContext } from '../lib/InkDropContext';
 
 type ToolBarProps = {
   activated: boolean;
 };
 
 export default function ToolBar({ activated }: ToolBarProps) {
+  const [context, setContext] = useContext(InkDropContext);
   const [isActivated, setActivated] = useState(activated);
+
+  function handleNewNote() {
+    setContext({
+      ...context,
+      notes: [
+        ...context.notes,
+        {
+          id: uuidv4(),
+          text: 'something',
+          x: 100,
+          y: 100,
+        },
+      ],
+    });
+  }
 
   return isActivated ? (
     <div className={styles.wrapper}>
@@ -21,7 +39,7 @@ export default function ToolBar({ activated }: ToolBarProps) {
             <Menu size={24} strokeWidth={1} />
           </div>
           <div className={styles.toolContainer}>
-            <button className={styles.tool} onClick={() => alert('ok')}>
+            <button className={styles.tool} onClick={handleNewNote}>
               <Plus size={24} strokeWidth={1} />
               New Note
             </button>
