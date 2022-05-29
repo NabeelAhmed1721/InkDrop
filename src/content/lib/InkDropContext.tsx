@@ -1,4 +1,6 @@
 import { createContext, ReactNode, useState, Dispatch } from 'react';
+// eslint-disable-next-line import/named
+import { CanvasPath } from 'react-sketch-canvas';
 import { NoteProps } from '../components/Note';
 
 type ContextProviderProps = {
@@ -10,12 +12,16 @@ type ContextProviderProps = {
 type InkDropContextType = {
   url: string;
   activated: boolean;
+  enableDraw: boolean;
+  drawPath: CanvasPath[];
   notes: NoteProps[];
 };
 
 const defaultValues: InkDropContextType = {
   url: '',
   activated: false,
+  enableDraw: false,
+  drawPath: [],
   notes: [],
 };
 

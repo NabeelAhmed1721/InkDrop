@@ -2,6 +2,7 @@ import { ReactNode, useContext, useEffect } from 'react';
 import { UrlChangeDataType } from '../../background';
 import { ToolBar, NoteContainer } from '.';
 import { InkDropContext, InkDropContextProvider } from '../lib/InkDropContext';
+import DrawContainer from './DrawContainer';
 // import styles from '../styles/Wrapper.module.css';
 
 export type WrapperProps = UrlChangeDataType & {
@@ -16,6 +17,7 @@ export default function Wrapper({ url, activated = false }: WrapperProps) {
         <Controller>
           <ToolBar activated={activated} />
           <NoteContainer />
+          <DrawContainer />
         </Controller>
       </InkDropContextProvider>
     </>
@@ -39,9 +41,10 @@ function Controller({ children }: ControllerProps) {
   }, []);
 
   useEffect(() => {
+    const { drawPath, notes, url } = context;
     localStorage.setItem(
       `inkdrop-objects-${context.url}`,
-      JSON.stringify(context),
+      JSON.stringify({ drawPath, notes, url }),
     );
   }, [context]);
 

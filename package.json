@@ -50,6 +50,7 @@
     "react-draggable": "^4.4.5",
     "react-feather": "^2.0.9",
     "react-hot-loader": "^4.13.0",
+    "react-sketch-canvas": "^6.1.5",
     "uuid": "^8.3.2"
   }
 }

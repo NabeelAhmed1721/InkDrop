@@ -25,9 +25,16 @@ export default function ToolBar({ activated }: ToolBarProps) {
           id: uuidv4(),
           text: 'something',
           x: 100,
-          y: 100,
+          y: 100 + window.scrollY,
         },
       ],
+    });
+  }
+
+  function handleDraw() {
+    setContext({
+      ...context,
+      enableDraw: !context.enableDraw,
     });
   }
 
@@ -43,9 +50,9 @@ export default function ToolBar({ activated }: ToolBarProps) {
               <Plus size={24} strokeWidth={1} />
               New Note
             </button>
-            <button className={styles.tool}>
+            <button className={styles.tool} onClick={handleDraw}>
               <Edit2 size={24} strokeWidth={1} />
-              Draw
+              {context.enableDraw ? 'Finish Drawing' : 'Draw'}
             </button>
           </div>
           <div className={styles.button}>

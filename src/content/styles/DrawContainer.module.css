@@ -1,0 +1,22 @@
+.container {
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 9999;
+}
+
+.canvas {
+    cursor: crosshair;
+    position: absolute;
+    border: none !important;
+    top: -24px; /* account for padding */
+    left: -24px;
+}
+
+.render {
+    cursor: crosshair;
+    position: absolute;
+    border: none !important;
+    top: 0;
+    left: 0; 
+}
