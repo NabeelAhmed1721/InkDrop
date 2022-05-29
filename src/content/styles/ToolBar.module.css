@@ -1,0 +1,54 @@
+.wrapper {
+    width: calc(100% - 48px);
+    position: fixed;
+    z-index: 9999;
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    border-radius: 5px;
+    width: 650px;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.25);
+    background-color: white;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container:active {
+    cursor: grabbing;
+}
+
+.button {
+    display: flex;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #ddd;
+}
+
+.toolContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.tool {
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #eee;
+    border: 1px solid transparent;
+    display: flex;
+    gap: 8px;
+}
+
+.tool:hover {
+    background-color: #ddd;
+    border: 1px solid #aaa;
+}
