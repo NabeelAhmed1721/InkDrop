@@ -1,4 +1,5 @@
 # InkDrop
 
 ## To-Do
-- [ ] finish context view
+- [x] finish context view
+- [ ] bug: toolbar make only background draggable

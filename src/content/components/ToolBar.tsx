@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import Draggable from 'react-draggable';
 import styles from '../styles/ToolBar.module.css';
+import { X } from 'react-feather';
 
 type ToolBarProps = {
   url: string;
@@ -11,11 +13,16 @@ export default function ToolBar({ url, activated }: ToolBarProps) {
 
   return isActivated ? (
     <div className={styles.wrapper}>
-      <div className={styles.container}>
-        <div>Url: {url}</div>
-        <div>Activated: {isActivated ? 'yes' : 'no'}</div>
-        <button onClick={() => setActivated(false)}>X</button>
-      </div>
+      <Draggable>
+        <div className={styles.container}>
+          {/* <div>Url: {url}</div> */}
+          {/* <div>Activated: {isActivated ? 'yes' : 'no'}</div> */}
+          <div />
+          <div className={styles.closeButtonContainer}>
+            <X size={24} strokeWidth={1} onClick={() => setActivated(false)} />
+          </div>
+        </div>
+      </Draggable>
     </div>
   ) : null;
 }

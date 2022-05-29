@@ -13,4 +13,20 @@
     box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.25);
     background-color: white;
     padding: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container:active {
+    cursor: grabbing;
+}
+
+.closeButtonContainer {
+    display: flex;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.closeButtonContainer:hover {
+    background-color: #ddd;
 }

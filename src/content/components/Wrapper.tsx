@@ -7,5 +7,5 @@ export type WrapperProps = UrlChangeDataType & {
 };
 
 export default function Wrapper({ url, activated = false }: WrapperProps) {
-  return <ToolBar url={url} activated={activated} />;
+  return <ToolBar url={url} activated={true} />;
 }
