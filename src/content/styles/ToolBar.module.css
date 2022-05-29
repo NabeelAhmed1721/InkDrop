@@ -15,18 +15,40 @@
     padding: 8px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .container:active {
     cursor: grabbing;
 }
 
-.closeButtonContainer {
+.button {
     display: flex;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.closeButtonContainer:hover {
+.button:hover {
     background-color: #ddd;
+}
+
+.toolContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.tool {
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #eee;
+    border: 1px solid transparent;
+    display: flex;
+    gap: 8px;
+}
+
+.tool:hover {
+    background-color: #ddd;
+    border: 1px solid #aaa;
 }
