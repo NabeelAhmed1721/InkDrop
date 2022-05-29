@@ -39,7 +39,7 @@ export default function DrawContainer() {
         className={styles.canvas}
         canvasColor="rgba(255,255,255,0)"
         width={`${document.body.clientWidth}px`}
-        height={`${document.body.clientHeight}px`}
+        height={`${document.body.scrollHeight}px`}
       />
     </div>
   ) : (
@@ -49,7 +49,7 @@ export default function DrawContainer() {
       style={{ pointerEvents: 'none' }}
       canvasColor="rgba(255,255,255,0)"
       width={`${document.body.clientWidth}px`}
-      height={`${document.body.clientHeight}px`}
+      height={`${document.body.scrollHeight}px`}
     />
   );
 }
