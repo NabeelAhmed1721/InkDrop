@@ -16,6 +16,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: absolute;
 }
 
 .container:active {
@@ -46,6 +47,8 @@
     border: 1px solid transparent;
     display: flex;
     gap: 8px;
+    align-items: center;
+    color: black;   
 }
 
 .tool:hover {

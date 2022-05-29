@@ -1,5 +1,5 @@
 import { UrlChangeDataType } from '../../background';
-import { ToolBar } from '.';
+import { ToolBar, NoteContainer } from '.';
 // import styles from '../styles/Wrapper.module.css';
 
 export type WrapperProps = UrlChangeDataType & {
@@ -7,5 +7,10 @@ export type WrapperProps = UrlChangeDataType & {
 };
 
 export default function Wrapper({ activated = false }: WrapperProps) {
-  return <ToolBar activated={activated} />;
+  return (
+    <>
+      <ToolBar activated={activated} />
+      <NoteContainer />
+    </>
+  );
 }
