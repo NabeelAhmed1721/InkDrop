@@ -13,6 +13,7 @@ export type NoteProps = {
 
 export default function Note({ id, text, x = 0, y = 0 }: NoteProps) {
   const [context, setContext] = useContext(InkDropContext);
+  const [noteText, setNoteText] = useState(text);
   const [position, setPosition] = useState<ControlPosition>({ x, y });
 
   useEffect(() => {
@@ -22,12 +23,26 @@ export default function Note({ id, text, x = 0, y = 0 }: NoteProps) {
       setContext({
         ...context,
         notes: [
-          { ...currentData, x: position.x, y: position.y },
           ...context.notes.filter((note) => note.id !== id),
+          { ...currentData, x: position.x, y: position.y },
         ],
       });
     }
   }, [position]);
+
+  useEffect(() => {
+    const currentData = context.notes.find((note) => note.id === id);
+
+    if (currentData) {
+      setContext({
+        ...context,
+        notes: [
+          ...context.notes.filter((note) => note.id !== id),
+          { ...currentData, text: noteText },
+        ],
+      });
+    }
+  }, [noteText]);
 
   function handleDeleteNote() {
     setContext({
@@ -38,18 +53,21 @@ export default function Note({ id, text, x = 0, y = 0 }: NoteProps) {
 
   return (
     <Draggable
+      handle=".noteHandle"
       position={position}
       onDrag={(_, { x, y }) => setPosition({ x, y })}
     >
       <div key={id} className={styles.container}>
-        <div className={styles.header}>
+        <div className={`${styles.header} noteHandle`}>
           <button className={styles.deleteButton} onClick={handleDeleteNote}>
             <X size={24} strokeWidth={1} />
           </button>
         </div>
-        <div className={styles.content}>
-          {text}({x},{y})
-        </div>
+        <textarea
+          className={styles.content}
+          value={noteText}
+          onChange={(event) => setNoteText(event.target.value)}
+        />
       </div>
     </Draggable>
   );

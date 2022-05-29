@@ -9,9 +9,10 @@ export type WrapperProps = UrlChangeDataType & {
 };
 
 export default function Wrapper({ url, activated = false }: WrapperProps) {
+  // remove query params from url
   return (
     <>
-      <InkDropContextProvider url={url} activated={activated}>
+      <InkDropContextProvider url={url.split(/[?#]/)[0]} activated={activated}>
         <Controller>
           <ToolBar activated={activated} />
           <NoteContainer />
